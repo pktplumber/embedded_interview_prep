@@ -55,12 +55,12 @@ Inline indicates that a function can be copied to the call location. It is bette
 
 A macro simply copies text into the call/referenced location. It does not do any type checking.
 
-#### What are the properties of an object-oriented programming language?
+#### What are the 4 main properties of an object-oriented programming language? Explain each one.
 
-1. 
-2. 
-3. 
-4. 
+1. Encapsulation - 
+2. Inheritance - 
+3. Polymorphism - 
+4. Abstraction - 
 
 #### What is an atomic operation? Why are atomic operations useful?
 

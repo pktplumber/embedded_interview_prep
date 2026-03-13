@@ -54,6 +54,8 @@
 
 ### Networking/Communications
 #### What is the difference between UDP and TCP? When would you use one over the other?
+#### What are some ways to handle packet loss in a communication system?
+#### How would you design a robust packet framing protocol for an embedded device?
 
 #### What is a memory leak?
 #### When and why would you use the keyword "static"?
