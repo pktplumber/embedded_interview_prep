@@ -1,4 +1,4 @@
-# Implement `malloc` for an Embedded System
+# Implement `malloc` and `free` for an Embedded System in C
 
 ### Constraints
 - 128 KB RAM

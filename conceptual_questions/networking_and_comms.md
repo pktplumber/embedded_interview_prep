@@ -6,6 +6,8 @@
 ### What is the role of each layer in the TCP/IP model?
 ### What layer does TCP operate at?
 ### Explain what happens when an application sends data over a network.
+### What are some ways to handle packet loss in a communication system?
+### How would you design a robust packet framing protocol for an embedded device?
 
 ## Programming
 ### What is a socket?
@@ -33,8 +35,7 @@
 ### What is ARP? What is it's purpose and how does it work?
 ### What is ICMP?
 ### What happens when you run `ping`?
-### What is the difference between TCP and UDP?
-### When would you use UDP instead of TCP and vice versa?
+### What is the difference between TCP and UDP? When would you use one over the other?
 ### How does TCP ensure reliable delivery?
 
 ## Network Configuration
@@ -47,8 +48,6 @@
 ## Electronics
 ### What is a switch?
 ### What is a router?
-### What happens if a router does not have the destination IP address/network in it's routing table?
-
 
 # Advanced Topics
 

@@ -38,3 +38,8 @@ uint32_t *reg = (uint32_t*)0x40001000;
 ### What is a segmentation fault and what are some common causes? What happens in the OS during a segmentation fault?
 ### Name some common linux commands and their purposes.
 ### What is an OS signal? Can you name some linux OS signals and their purposes?
+
+## Programming/Design Topics
+### What is a priority queue? How does it work?
+### How would you implement a time-triggered schedule in an embedded system? Especially one that needs to synchronize with another device or one that has a hard real-time schedule.
+
