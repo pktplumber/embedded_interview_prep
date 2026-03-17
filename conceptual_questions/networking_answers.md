@@ -50,7 +50,6 @@ It is usually defined by:
 - `send()` - Sends data to a specified address. If TCP, it will send data to the address that is connected to the socket
 - `receive()` - Will attempt to receive data that has been sent to the socket over the network
 
-### What happens during a TCP connection handshake?
 ### What is the difference between a client and a server?
 A **client** is an object that connects to a server.
 

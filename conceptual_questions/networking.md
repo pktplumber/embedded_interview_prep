@@ -10,7 +10,6 @@
 ## Programming
 ### What is a socket?
 ### These functions are used for TCP connections. What do they do? `socket()`, `bind()`, `listen()`, `accept()`, `send()/receive()`
-### What happens during a TCP connection handshake?
 ### What is the difference between a client and a server?
 ### Explain the TCP three way handshake.
 
