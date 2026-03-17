@@ -158,4 +158,18 @@ void my_free(void* ptr)
     free_list = block;
 
     coalesce(block);
-}
+}How do you detect memory leaks?
+
+/*
+    How do you avoid fragmentation?
+        - Coalescing (critical) → merges adjacent free blocks
+        - Block splitting → avoids wasting large chunks
+        - Best-fit instead of first-fit (reduces leftover fragments)
+        - Segregated free lists (e.g., small vs large bins)
+        - Fixed-size pools for small allocations (VERY effective)
+*/
+
+/*
+    How do you detect memory leaks?
+        - Counters to track total allocs and frees
+*/

@@ -5,6 +5,7 @@
 - Many small allocations
 - Occasional large buffer allocations
 - Long system uptime
+- Contiguous memory must be coalescesed
 
 ### Follow-ups
 - How do you avoid fragmentation?
