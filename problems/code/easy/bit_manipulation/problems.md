@@ -26,3 +26,7 @@ You are given this register:
 Write safe code to modify only MODE.
 Why might C bitfields be dangerous here?
 What happens if the register is write-one-to-clear?
+
+### Implement a function that reverses the bits in a uint32_t
+
+### Given an array of size n containing numbers 1..n-1, find the duplicate.

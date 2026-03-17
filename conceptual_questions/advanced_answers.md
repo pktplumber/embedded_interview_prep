@@ -151,3 +151,50 @@ If the page is not mapped, is read-only/protected, or outside the processes allo
 
 ### Name some common linux commands and their purposes.
 ### What is an OS signal? Can you name some linux OS signals and their purposes?
+### Name some common scheduling algorithms and their uses.
+- Round Robin: Each task is assigned a time slice and processed in order. If the task does not finish in time, it is stopped, placed into the back of the queue, and the next task is processed
+  - Simple algorithm useful for tasks with similar importance
+- First Come First Serve: Tasks execute in the order they arrive. The scheduled task executes until it's completed then the next task is started
+  - Very simple algorithm useful for systems without strict timing requirements. Con is that long tasks delay short ones.
+- Rate Monotonic Scheduling: Tasks with shorter periods get higher priorities. Tasks run preemptively
+  - Useful for hard-deadline systems and RTOSes
+- Earliest Deadline First: Dynamic algorithm where tasks with shortest deadline are ran first. Priority changes dynamically.
+  - Useful for hard deadline RTOSes.
+- Priority-Based Scheduling: Each task has a fixed priority. If a task with a higher priority becomes ready, it preempts the running task.
+  - Used in most RTOSes. Good for critical tasks with predictable timing, but can cause priority inversion if not careful.
+- Cooperative Scheduling: Tasks run until they yield control to the scheduler
+  - Useful for lightweight RTOSes with limited RAM/CPU, but one badly written task can block the system. 
+
+### Explain Rate Monotonic Scheduling
+1. Tasks are assigned a period/frequency at compile time
+2. The system timer is set for some time <= the shortest scheduled task period
+3. When the timer expires, it checks which tasks need to be processed.
+4. If multiple tasks need to be ran, the scheduler will run the task with the smallest period first
+
+#### Example:
+Task A = 5 ms,
+Task B = 10 ms,
+Task C = 20 ms
+
+```
+Time (ms) - Task order
+0         - A B C
+5         - A
+10        - A B
+15        - A
+20        - A B C
+```
+
+### Explain Earliest Deadline First Scheduling
+1. Tasks are assigned a period, execution time, and relative deadline
+2. When a task is release, the scheduler calculates the absolute deadline (release time + relative deadline)
+3. The scheduler deadline chooses the earliest deadline by maintaining a ready queue sorted by the task's absolute deadlines
+4. If a new task arrives with an earlier deadline, the scheduler preempts the running task and runs the new task
+
+## Programming/Design Topics
+### What is a priority queue? How does it work?
+
+### How would you implement a time-triggered schedule in an embedded system? Especially one that needs to synchronize with another device or one that has a hard real-time schedule.
+
+### List some scheduling algorithms, how they work, and their uses.
+

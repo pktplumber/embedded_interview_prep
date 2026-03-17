@@ -1,0 +1,1 @@
+There is a room with three incandesant light bulbs in it. Outside the room through a solid door are the three switches which correspond to the light bulbs. You are allowed to manipulate the switches and go inside the room only once but you need to determine which switch corresponds to which bulb. How do you manage this?

@@ -80,6 +80,11 @@ It is a 32 bit number that defines which portion of an IP address represents the
 It improves routing because routers don't have to broadcast packets to the entire network, they just send them to the specific subnet. Makes routing tables smaller, reduces broadcast traffic, and improves security since you can isolate groups.
 
 ### What is a default gateway and its use?
+The default gateway is device's (usually the router) IP address that it sends data to when it needs to communicate with devices outside of its own LAN.
+
+### What is a default route?
+A default route specifies the gateway to communicate with an address that is not in the routing table. Typically this is "0.0.0.0". Think of it as "any destination".
+
 ### What is the difference between public and private IP addresses?
 ### What does 192.168.1.10/24 mean?
 ### Explain what happens when you send a packet to an IP address.
@@ -97,8 +102,24 @@ At startup, a device will send a broadcast "DHCP Discover Packet". The DHCP serv
 "Address Resolution Protocol". It's used to map IP addresses to their MAC address. The host sends a message asking which device has the requested IP address. The device will respond with it's MAC address, then the host updates it's IP/MAC table. The table is used to quickly translate IP address to a devices MAC address.
 
 ### What is ICMP?
+"Internet Control Message Protocol". It is a protocol that sends control and error information between devices on a network to communicate about network issues, reachability, and diagnostics.
+
+Some common uses include:
+- Ping - checks if a host is reachable
+- Traceroute - Determine the path packets take to a destination
+- Error reporting - Lets sender know about issues
+
+Works at networking level (OSI layer 3).
+
 ### What happens when you run `ping`?
+1. Your computer creates an ICMP Echo Request packet with the src/dest addresses and a timestamp
+2. It travels to the destination via a router
+3. The target responds if reachable and a generates an ICMP Echo Reply packet with the src/dest address, the same sequence number as the request, and the reception timestamp
+4. It travels back to the sender which the calculates the round-trip time and any packet losses
+
 ### What is the difference between TCP and UDP? When would you use one over the other?
+TCP requires a connection. UDP is connectionless. TCP is for reliable data but is slower. UDP is for unreliable data but is faster because it does not have the same overhead (handshaking/acks) as TCP.
+
 ### How does TCP ensure reliable delivery?
 - Initial connection: A three way handshake is performed when the client wants to connect to a server. The client will send a SYN, the server responds with a SYN-ACK, then the client responds with an ACK. This ensures both sides are ready and synchronized.
 - Sequence numbers: Each packet has a sequence number. If packets are received out of order (determined by sequence number), the receiving end will request the sender to re-transmit the dropped packets.
@@ -145,6 +166,11 @@ The router will typically send the packet to it's default gateway which is the I
 
 ## Protocols
 ### What is "Selective Acknowledgement" (SACK) in the TCP protocol? How can it improve communication in a high-latency or noisy network?
+A TCP mechanism that allows receivers to inform senders about successfully received, out-of-order data blocks. Improves performance.
+
+When a burst of packets is sent, and the receiver receives some packets, but some are dropped, the sender is notified and will only retransmit the missing segments instead of the entire window.
+
+SACK is established during the connection/handshake by using the "SACK-permitted" option.
 
 ## RF Communication
 ### What is Time-Division Multiplexing (TDM) and Frequency-Division Multiplexing (FDM)? What is the advantage of using TDM over FDM?
@@ -155,4 +181,26 @@ FDM is an analog technique that transmits multiple signals simultaneously over a
 
 TDM can make more efficient use of a single frequency band, so it's good for predictable data streams.
 
+## Scheduling
+### Name some packet scheduling algorithms and their uses
+- First-In First-Out (FIFO): Packets are transmitted in the exact order they arrive
+  - Simple, basic interfaces that don't need priority scheduling or bandwidth sharing
+- Priority Queueing: Packets are classified by priority levels. The schedule services the packets with the highest priority first to the lowest
+  - Useful for real-time traffic that requires guarantees for high priority messages
+- Weighted Round Robin: Each queue gets a weight which determines how many packets can be sent per cycle.
+  - Useful QoS and traffic requiring simple fairness and easy bandwidth differentiation
+- Deficit Weighted RR: Like WRR, but each queue gets a weight/quantum (determines allowed bytes per round) and a deficit counter. Packets are transmitted if they fit in the deficit budget.
+  - More advanced traffic control or bandwidth sharing between multiple classes of traffic in O(n) time complexity
+- Weighted Fair Queueing (WFQ): Each packet/class gets a virtual finish time and the packet with the smallest finish time is sent first.
+  - Useful as a very fair scheduling algorithm
+- Earliest Deadline First
+  - Optimal for meeting deadlines
+- Token/Leaky Bucket: Traffic shaper which controls average bandwidth while allowing bursts
 
+### Explain how Token Bucket traffic shaping works
+Token Bucket algorithm allows traffic to burst up to a limit while enforcing an average rate over time.
+
+- Buckets hold tokens that are added at a fixed rate (1000/s)
+- Sending a packet costs tokens proportional to its size
+- If enough tokens are available, the packet is sent immediately and tokens are subtracted
+- Otherwise, the packet waits or is dropped

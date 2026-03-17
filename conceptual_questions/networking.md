@@ -57,3 +57,7 @@
 
 ## RF Communication
 ### What is Time-Division Multiplexing (TDM) and Frequency-Division Multiplexing (FDM)? What is the advantage of using TDM over FDM?
+
+## Scheduling
+### Name some packet scheduling algorithms and their uses
+### Explain how Token Bucket traffic shaping works
