@@ -110,6 +110,17 @@ Templates enable a type of static/compile-time polymorphism where the template t
 
 For example, `std::vector<T>` is a container class that can store many different types of classes/types such as `std::vector<uint8_t>`, `std::vector<int>`, `std::vector<CustomClass>`, etc.
 
+### What is the difference between C and C++? When would you use C over C++ and vice versa?
+
+C is purely procedural and C++ is object-oriented (could also be procedural). C has limited abstraction features while C++ has strong abstraction features such as classes, encapsulation, access modifiers (`public` and `private`), etc.. The C standard library is smaller/simpler and required manual memory management. The C++ standard library offers many more features and can support manual + some safer memory management options like smart pointers.
+
+C is better suited for code that requires maximum control of memory management and minimal abstraction. Linux kernel drivers cannot be written in C++, so C is oftern the best choice for kernal drivers.
+
+C++ is better suited for large, complex systems and when you want to benefit from code re-use and abstraction.
+
+### What is the difference between python and C/C++?
+Python is an interpreted language and C/C++ are both compiled languages. Python is a program build with C. Python syntax and type checking is done at runtime. C/C++ syntax and type checking are done at compile time.
+
 ## Compiling
 ### Explain the stages of compiling c/c++ code. What are the different stages?
 1. Preprocessor: Processes all lines beginning with `#`. `#define` performs a text substitution of all references to the macro. `#include` inserts the contents of the referenced header file. Comments are removed.
