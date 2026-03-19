@@ -5,4 +5,4 @@ Repo for embedded software interview preparation. This repo contains problems I'
 - conceptual_questions/ - Contains behavioral and technical questions
 - problems/ - Coding challenges and puzzles
 
-A /user folder to practice and answer your own behavioral questions. This folder will not be added to the git repo.
+You can use a `/user` folder as your own workspace to practice and answer prroblems. This folder will not be added to the git repo.
