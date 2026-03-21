@@ -1,8 +1,6 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#define MAX_FREE_BLOCKS 32
-
 typedef struct FreeBlock
 {
     uint32_t address;   // start address of free block

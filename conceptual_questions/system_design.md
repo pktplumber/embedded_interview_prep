@@ -11,3 +11,5 @@
 ### How would you debug and optimize an embedded system that's experiencing unexpected latency spikes in its real-time response?
 
 ### Explain how you would implement a UART-based communication protocol in an embedded system, and explain what considerations you'd have to keep in mind for timing and reliability.
+
+### Draw a state-machine for a opening and closing a garage door. How would you modify it for safety, to prevent the door closing on someone?

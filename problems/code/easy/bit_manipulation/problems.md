@@ -30,3 +30,5 @@ What happens if the register is write-one-to-clear?
 ### Implement a function that reverses the bits in a uint32_t
 
 ### Given an array of size n containing numbers 1..n-1, find the duplicate.
+
+### Round a number to the next multiple of 8. Repeat for 16, and 32. How about 10?

@@ -5,8 +5,8 @@
 The OSI is a layered conceptual framework for illustrating how data should flow in a network device. It is a theoretical model. From top to bottom, it consists of:
 1. Application layer: Handles direct interaction with the user.
 2. Presentation layer: Handles data formatting, encryption, and compression
-3. Session layer: Manages sessions/connections between applications
-4. Transport layer: Manages end-to-end comms, flow control, and error correction (TCP and UDP)
+3. Session layer: Manages sessions/connections between applications, i.e. who talks when
+4. Transport layer: Manages end-to-end comms, segmentation, flow control, and error correction (TCP and UDP)
 5. Network layer: Determines physical routing of data packets (think IP addresses)
 6. Data link layer: Handle physical framing protocol/interaction with the hardware
 7. Physical layer: Transmits raw bits over physical medium (cable or wireless)
@@ -79,6 +79,8 @@ It is a 32 bit number that defines which portion of an IP address represents the
 
 It improves routing because routers don't have to broadcast packets to the entire network, they just send them to the specific subnet. Makes routing tables smaller, reduces broadcast traffic, and improves security since you can isolate groups.
 
+For example, if a device wants to send a packet to another address on the same local subnet (determined by the subnet), then the sending device can use ARP resolution instead of sending the packet to the router/default gateway which is more efficient. If the destination address is not on the same subnet, the sender will not try to contact it directly at the MAC layer. Instead, it will send the packet to the default gateway (usually the router).
+
 ### What is a default gateway and its use?
 The default gateway is device's (usually the router) IP address that it sends data to when it needs to communicate with devices outside of its own LAN.
 
@@ -86,8 +88,19 @@ The default gateway is device's (usually the router) IP address that it sends da
 A default route specifies the gateway to communicate with an address that is not in the routing table. Typically this is "0.0.0.0". Think of it as "any destination".
 
 ### What is the difference between public and private IP addresses?
+Public address = externally exposed/internet facing
+Private addresses = exposed only to the local network
+
 ### What does 192.168.1.10/24 mean?
-### Explain what happens when you send a packet to an IP address.
+Classless Inter-Domain Routing (CIDR) notation.
+
+`192.168.1.10` is host IP address.
+`/24` is the subnet mask. It means that the first 24 bits are the network portion (equivalent to setting the subnet mask to `255.255.255.0`).
+
+The host range for /24 is:
+- Network: 192.168.1.0
+- Broadcast: 192.168.1.255
+- Usable hosts: 192.168.1.1 → 192.168.1.254
 
 ## Protocols
 ### What is DHCP and what does it do?
@@ -133,6 +146,11 @@ The TCP sliding window defines how many bytes of data can be sent before needing
 ### What is DHCP and its process?
 ### What is a "default gateway"?
 ### What information is required to configure a static IP address?
+1. IP address: The address assigned to the device
+2. Subnet mask: Defines network and host portions of the address
+3. Default gateway: Address of the router which allows the device to communicate outside of the LAN
+4. DNS server (optional): Address of the server to translate domain names to IP addresses
+
 ### What is a port number and it's purpose?
 
 ## Electronics

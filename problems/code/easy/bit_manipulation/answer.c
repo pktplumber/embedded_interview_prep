@@ -60,3 +60,13 @@ uint32_t reverse_bits(uint32_t num)
     ret = ((ret & 0xCCCCCCCC) >> 2) | ((ret & 0x33333333) << 2);
     return ((ret & 0xAAAAAAAA) >> 2) | ((ret & 0x55555555) << 1);
 }
+
+
+#define ROUND_UP_8(x)  (((x) + 7) & ~7)
+#define ROUND_UP_16(x)  (((x) + 15) & ~15)
+#define ROUND_UP_32(x)  (((x) + 15) & ~31)
+#define ROUND_UP_10(x)  (((x) + 9) / 10 * 10)
+
+#define ROUND_DOWN_8(x)  ((x) & ~7)
+#define ROUND_DOWN_16(x)  ((x) & ~15)
+#define ROUND_DOWN_32(x)  ((x) & ~31)
