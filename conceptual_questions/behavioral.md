@@ -8,11 +8,11 @@
 
 ### What is your biggest weakness?
 
-### Tell me about a time when you had to unblock yourself. 
+### Tell me about a time when you had to unblock yourself. (viasat)
 
-### Tell me about a time when a feature could not be completed in the required time. What compromises did you have to make? How did you resolve the issue?
+### Tell me about a time when a feature could not be completed in the required time. What compromises did you have to make? How did you resolve the issue? (viasat)
 
-### Tell me about a time when you had to handle a disagreement or conflict with a colleague on a technical project. How did you approach it, and what was the outcome?
+### Tell me about a time when you had to handle a disagreement or conflict with a colleague on a technical project. How did you approach it, and what was the outcome? (viasat)
 
 ### Tell me about a time you had to debug a difficult hardware–software integration problem.
 
@@ -27,3 +27,7 @@
 ### Tell me about a time when you had to mentor or train a junior engineer or teammate. How did you help them grow, and what was the result?
 
 ### Tell me about a time when you had to solve a difficult engineering challenge.
+
+### Talk about a time when you had to make a compromise on a project. What was the compromise and the outcome? (viasat)
+
+### How do you go about understanding/relating to colleagues from different backgrounds? (viasat)

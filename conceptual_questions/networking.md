@@ -6,11 +6,12 @@
 ### What is the role of each layer in the TCP/IP model?
 ### What layer does TCP operate at?
 ### Explain what happens when an application sends data over a network.
+### Host A has an IP of 10.0.1.10 and sends a packet to Host B which has the IP 192.168.1.20. Host A and Host B are physically connected by a router which has the IPs of 10.0.1.1 (connected to Host A) and 192.168.1.1 (connected to Host B). Can you explain how the packet is routed from Host A to Host B?
+### Now, say there are two devices with the same address of 192.168.1.20 connected to the router. What would happen if you tried to send a packet from Host A (10.0.1.10) to 192.168.1.20? How would you diagnose and fix any faulty behavior?
 
 ## Programming
 ### What is a socket?
 ### These functions are used for TCP connections. What do they do? `socket()`, `bind()`, `listen()`, `accept()`, `send()/receive()`
-### What happens during a TCP connection handshake?
 ### What is the difference between a client and a server?
 ### Explain the TCP three way handshake.
 
@@ -48,7 +49,6 @@
 ### What is a switch?
 ### What is a router?
 ### What happens if a router does not have the destination IP address/network in it's routing table?
-
 
 # Advanced Topics
 

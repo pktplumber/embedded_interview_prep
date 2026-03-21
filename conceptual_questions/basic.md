@@ -14,6 +14,8 @@
 ### What is an atomic operation? Why are atomic operations useful?
 ### What is memory fragmentation? How do you avoid it?
 ### What are templates in C++? Why are they useful?
+### What is the difference between C and C++? When would you use C over C++ and vice versa?
+### What is the difference between python and C/C++?
 
 ## Compiling
 ### Explain the stages of compiling c/c++ code. What are the different stages?
